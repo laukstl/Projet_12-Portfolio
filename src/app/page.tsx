@@ -8,10 +8,11 @@ import ProjectsGallery from "@/components/ProjectsGallery";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import Image3D from "@/components/Image3D";
+import Competences from "@/components/Competences";
 
 function Home() {
     return (
-        <main className="flex flex-col items-center justify-between border border-green-500 mx-0 overflow-hidden">
+        <main className="ml-2 min-w-[575px] flex flex-col items-center justify-between mt-[57px] sm:mt-[93px] lg:mt-[57px] overflow-hidden">
         {/* <main className="flex min-h-screen flex-col items-center justify-between border border-red-500"> */}
         {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
 
@@ -30,7 +31,7 @@ function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        From{" "}
+                        Powered by{" "}
                         <Image
                             src="/kstl_logo.webp"
                             alt="Kstl Logo"
@@ -45,10 +46,10 @@ function Home() {
 
             {/*** ABOUT ***/}
             <div id="about" className="flex items-center">
-                <div>
-                    <h1 className="text-bold text-4xl">Portfolio</h1>
-                    <h2 className="text-2xl border border-red-500">Bonjour ! Mon nom est Laurent CASTELL !</h2>
-                    <p>"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
+                <div className="text-center">
+                    <h1 className="text-bold text-4xl">Laurent Castell</h1>
+                    <h2 className="text-2xl">Portfolio</h2>
+                    <p className="italic mt-2">"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
                 </div>
                     <div className="flex justify-center items-center">
                         <Image3D />
@@ -80,6 +81,13 @@ function Home() {
                     </p>
                 </a>
             </div> */}
+
+
+            {/*** COMPETENCES ***/}
+            <div id="competence" className="font-bold text-3xl text-center">
+                <h2>Competences</h2>
+                <Competences />
+            </div>
 
             {/*** FORM ***/}
             <div id="contact" className="w-full mt-20">

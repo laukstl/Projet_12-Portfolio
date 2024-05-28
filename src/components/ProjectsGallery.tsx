@@ -35,7 +35,7 @@ function ProjectsGallery() {
                             src={item.img ? item.img : default_image}
                             width={500}
                             height={500} 
-                        ></Image>
+                        />
                         <div className='z-2 bg-blur absolute inset-x-0 bottom-0 h-16 backdrop-blur-md m-1 p-1 rounded-lg border'>
                             <div className='font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>{item.pname ? item.pname : "Titre"}</div>
                             <div className='text-black drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]'>Description de {item.pname}</div>

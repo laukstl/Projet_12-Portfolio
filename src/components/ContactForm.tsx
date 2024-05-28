@@ -25,22 +25,43 @@ export default function Contact() {
     }
 
     return (
-        <div className="w-100 border border-red-500">  {/* FIXME: mt mb */}
-            <form onSubmit={handleSubmit} className="flex flex-col w-full">
-                <label>Nom
-                    <input type="text" name="name" className="mb-2 p-2 border rounded" placeholder="Nom" />
+        <div className="min-w-[24rem] p-4 border mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
+                <label className="flex flex-col">
+                    <span className="mb-1">Nom</span>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        className="p-2 border rounded" 
+                        placeholder="Nom" 
+                    />
                 </label>
-                <label>Email
-                    <input type="email" name="email" className="mb-2 p-2 border rounded" placeholder="Email" />
+                <label className="flex flex-col">
+                    <span className="mb-1">Email</span>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        className="p-2 border rounded" 
+                        placeholder="votre-email@" 
+                    />
                 </label>
-                <label>Votre message
-                    <textarea name="message" className="mb-2 p-2 border rounded" placeholder="Message..."></textarea>
+                <label className="flex flex-col">
+                    <span className="mb-1">Message</span>
+                    <textarea 
+                        name="message" 
+                        className="p-2 border rounded" 
+                        placeholder="Message..." 
+                    />
                 </label>
-                <button type="submit" className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+                <button 
+                    type="submit" 
+                    className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
+                >
                     Envoyer un message
                 </button>
             </form>
         </div>
     );
+    
 
 }
