@@ -12,9 +12,7 @@ import Competences from "@/components/Competences";
 
 function Home() {
     return (
-        <main className="ml-2 min-w-[575px] flex flex-col items-center justify-between mt-[57px] sm:mt-[93px] lg:mt-[57px] overflow-hidden">
-        {/* <main className="flex min-h-screen flex-col items-center justify-between border border-red-500"> */}
-        {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
+        <main id="top" className="ml-2 min-w-[375px] flex flex-col justify-between mt-[57px] sm:mt-[93px] lg:mt-[57px] overflow-hidden max-w-screen-xl">
 
             {/*** BACKGOUND ***/}
             <div className="-z-50">
@@ -22,8 +20,11 @@ function Home() {
             </div>
 
             {/*** NAVIGATION + LOGO ***/}
-            <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+            <div className="z-20 ml-50">
                 <Navigation />
+            </div>
+            <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex mx-auto">
+                {/* <Navigation /> */}
                 <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
                     <a
                         className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
@@ -36,8 +37,11 @@ function Home() {
                             src="/kstl_logo.webp"
                             alt="Kstl Logo"
                             className="dark:invert"
-                            width={150}
-                            height={150}
+                            width={75}
+                            // 150
+                            height={45}
+                            // 87
+                            style={{ height: 'auto' }}
                             priority
                         />
                     </a>
@@ -45,20 +49,28 @@ function Home() {
             </div>
 
             {/*** ABOUT ***/}
-            <div id="about" className="flex items-center">
-                <div className="text-center">
-                    <h1 className="text-bold text-4xl">Laurent Castell</h1>
-                    <h2 className="text-2xl">Portfolio</h2>
-                    <p className="italic mt-2">"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
+            <div id="about" className="flex flex-col items-center mt-20 md:flex-row gap-10 mx-auto">
+                <div className="flex justify-center items-center">
+                    <Image3D />
                 </div>
-                    <div className="flex justify-center items-center">
-                        <Image3D />
-                    </div>
+                <div className="text-center">
+                    <h1 className="text-bold text-8xl font-montBlack">Laurent Castell</h1>
+                    <h2 className="text-gray-500 text-6xl font-montExtraBold">Portfolio</h2>
+                    <p className="italic mt-5 text-2xl font-montLight">"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
+                </div>
+            </div>
+
+            {/*** COMPETENCES ***/}
+            <div id="competence" className="mt-20 items-start">
+                <h2 className="text-3xl mb-2 font-robotoThin">Compétences acquises :</h2>
+                <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
+                <Competences />
             </div>
 
             {/*** GALLERY ***/}
-            <div id="gallery">
-                <h2 className="font-bold text-3xl text-center">Projects :</h2>
+            <div id="gallery" className="mt-20">
+                <h2 className="text-3xl font-robotoThin">Derniers projets :</h2>
+                <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <ProjectsGallery />
             </div>
 
@@ -82,16 +94,11 @@ function Home() {
                 </a>
             </div> */}
 
-
-            {/*** COMPETENCES ***/}
-            <div id="competence" className="font-bold text-3xl text-center">
-                <h2>Competences</h2>
-                <Competences />
-            </div>
-
             {/*** FORM ***/}
             <div id="contact" className="w-full mt-20">
-                <h2 className="font-bold text-3xl text-center">Contactez moi</h2>
+                {/* <h2 className="font-bold text-3xl text-center">Contactez moi</h2> */}
+                <h2 className="text-3xl mb-2 font-robotoThin">Pour me contacter :</h2>
+                <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <ContactForm />
             </div>
 

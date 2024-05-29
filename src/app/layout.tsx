@@ -1,8 +1,68 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const robotoThin = Roboto({
+    subsets: ["latin"], weight: "100",
+    display: 'swap', variable: '--font-roboto-thin',
+});
+
+const robotoRegular = Roboto({
+  subsets: ["latin"], weight: "400",
+  display: 'swap', variable: '--font-roboto-rugular',
+});
+
+const robotoExtrabold = Roboto({
+  subsets: ["latin"], weight: "700",
+  display: 'swap', variable: '--font-roboto-extrabold',
+});
+
+const montBlack = Montserrat({
+  subsets: ["latin"], weight: "900",
+  display: 'swap', variable: '--font-mont-black',
+});
+
+const montExtrabold = Montserrat({
+  subsets: ["latin"], weight: "800",
+  display: 'swap', variable: '--font-mont-extrabold',
+});
+
+const montBold = Montserrat({
+  subsets: ["latin"], weight: "700",
+  display: 'swap', variable: '--font-mont-bold',
+});
+
+const montSemiBold = Montserrat({
+  subsets: ["latin"], weight: "600",
+  display: 'swap', variable: '--font-mont-semibold',
+});
+
+const montMedium = Montserrat({
+  subsets: ["latin"], weight: "500",
+  display: 'swap', variable: '--font-mont-medium',
+});
+
+const montRegular = Montserrat({
+  subsets: ["latin"], weight: "400",
+  display: 'swap', variable: '--font-mont-regular',
+});
+
+const montLight = Montserrat({
+  subsets: ["latin"], weight: "300",
+  display: 'swap', variable: '--font-mont-light',
+});
+
+const montExtraLight = Montserrat({
+  subsets: ["latin"], weight: "200",
+  display: 'swap', variable: '--font-mont-extralight',
+});
+
+const montThin = Montserrat({
+  subsets: ["latin"], weight: "100",
+  display: 'swap', variable: '--font-mont-thin',
+});
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -16,7 +76,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <body className={`
+
+          ${inter.className}
+          ${robotoThin.variable}
+          ${robotoRegular.variable}
+          ${robotoExtrabold.variable}
+
+          ${montBlack.variable}
+          ${montExtrabold.variable}
+          ${montBold.variable}
+          ${montSemiBold.variable}
+          ${montMedium.variable}
+          ${montRegular.variable}
+          ${montLight.variable}
+          ${montExtraLight.variable}
+          ${montThin.variable}
+
+          flex items-center flex-col`}>{children}</body>
     </html>
   );
 }

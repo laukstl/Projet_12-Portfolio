@@ -25,7 +25,7 @@ export default function Contact() {
     }
 
     return (
-        <div className="min-w-[24rem] p-4 border mx-auto">
+        <div className="min-w-[24rem] p-4 mx-auto">
             <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
                 <label className="flex flex-col">
                     <span className="mb-1">Nom</span>
@@ -33,7 +33,8 @@ export default function Contact() {
                         type="text" 
                         name="name" 
                         className="p-2 border rounded" 
-                        placeholder="Nom" 
+                        placeholder="Nom"
+                        autoComplete="name"
                     />
                 </label>
                 <label className="flex flex-col">
@@ -42,7 +43,8 @@ export default function Contact() {
                         type="email" 
                         name="email" 
                         className="p-2 border rounded" 
-                        placeholder="votre-email@" 
+                        placeholder="email@fai.fr"
+                        autoComplete="email"
                     />
                 </label>
                 <label className="flex flex-col">
@@ -50,12 +52,12 @@ export default function Contact() {
                     <textarea 
                         name="message" 
                         className="p-2 border rounded" 
-                        placeholder="Message..." 
+                        placeholder="Votre message..." 
                     />
                 </label>
                 <button 
                     type="submit" 
-                    className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
+                    className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
                 >
                     Envoyer un message
                 </button>

@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        robotoThin: ['var(--font-roboto-thin)'],
+        robotoRegular: ['var(--font-roboto-regular)'],
+        robotoExtrabold: ['var(--font-roboto-extrabold)'],
+
+        montBlack: ['var(--font-mont-black)'],
+        montExtraBold: ['var(--font-mont-extrabold)'],
+        montBold: ['var(--font-mont-bold)'],
+        montSemiBold: ['var(--font-mont-semibold)'],
+        montMedium: ['var(--font-mont-medium)'],
+        montRegular: ['var(--font-mont-regular)'],
+        montLight: ['var(--font-mont-light)'],
+        montExtraLight: ['var(--font-mont-extralight)'],
+        montThin: ['var(--font-mont-thin)'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
