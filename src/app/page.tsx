@@ -20,7 +20,7 @@ function Home() {
             </div>
 
             {/*** NAVIGATION + LOGO ***/}
-            <div className="z-20 ml-50">
+            <div className="z-50 ml-50">
                 <Navigation />
             </div>
             <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex mx-auto">
@@ -63,15 +63,17 @@ function Home() {
             {/*** COMPETENCES ***/}
             <div id="competence" className="mt-20 items-start">
                 <h2 className="text-3xl mb-2 font-robotoThin">Compétences acquises :</h2>
-                <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
+                <hr className="z-5 border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <Competences />
             </div>
 
             {/*** GALLERY ***/}
-            <div id="gallery" className="mt-20">
+            <div id="gallery" className="mt-20 z-20 md:z-0">
                 <h2 className="text-3xl font-robotoThin">Derniers projets :</h2>
-                <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
-                <ProjectsGallery />
+                <hr className="border-t-1 border-gray-400 w-full mx-auto my-4" />
+                <div className="z-20 ">
+                    <ProjectsGallery />
+                </div>
             </div>
 
             {/*** Card Titre Flèche Desc ***/}
