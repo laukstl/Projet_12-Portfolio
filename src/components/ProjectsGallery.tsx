@@ -118,13 +118,12 @@ function ProjectsGallery() {
                         <div
                             key={item.name}
                             className="rounded-lg p-2 laptop:p-4 first:ml-0 link relative"
-                            onClick={() => setHoveredProject(item)}
-                            // onMouseEnter={() => setHoveredProject(item)}
-                            // onMouseLeave={() => setHoveredProject(null)}
+                            onMouseEnter={() => setHoveredProject(item)}
+                            onMouseLeave={() => setHoveredProject(null)}
                         >
-                            <div className="flex flex-col min-w-[300px] w-full shadow-xl rounded-lg mob:h-auto
-                            ">
+                            <div className="flex flex-col min-w-[300px] w-full shadow-xl rounded-lg mob:h-auto">
 
+                                {/* Screenshot du project */}
                                 <Image
                                     alt={'Image de' + item.name}
                                     className="h-full rounded-lg w-full object-cover"
@@ -134,7 +133,7 @@ function ProjectsGallery() {
                                 />
 
                                 {/* Bandeau du bas */}
-                                <div className='bg-blur absolute inset-x-0 bottom-0 h-16 backdrop-blur-md m-4 p-1 rounded-lg border border-gray-500 flex justify-between'>
+                                <div className='z-50 bg-blur absolute inset-x-0 bottom-0 h-16 backdrop-blur-md m-4 p-1 rounded-lg border border-gray-500 flex justify-between'>
                                     <div className='ml-3 text-center flex-1'>
                                         <div className='font-bold text-white text-2xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]'>{item.pname ? item.pname : "Titre"}</div>
                                         <div className='text-black drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]'>Projet N°{item.prjt_numb}: {item.date}</div>

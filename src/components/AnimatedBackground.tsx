@@ -32,7 +32,7 @@ const AnimatedBackground = () => {
                     context.fillStyle = gradient;
                     context.fillRect(0, 0, width, height);
 
-                    time += 0.01;
+                    time += 0.02;
                     requestAnimationFrame(drawGradient);
                 };
 

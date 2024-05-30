@@ -17,8 +17,24 @@ function classNames(...classes: any) {
 function Navigation() {
     const [currentItem, setCurrentItem] = useState(navigation.find(item => item.current) || null);
 
-    const handleClick = (item: any) => {
+    const handleClick = (item: any, event: any) => {
         setCurrentItem(item);
+        if (item.href === '#competence') { // project ??
+            event.preventDefault();
+            scrollToSection(item.href);
+        }
+    };
+
+    const scrollToSection = (href: string) => {
+        const id = href.substring(1); // - #
+        const targetElement = document.getElementById(id);
+        if (targetElement) {
+            const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2 - targetElement.clientHeight / 2);
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     };
 
     return (
@@ -27,17 +43,15 @@ function Navigation() {
                         // dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit
                         lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4 lg:dark:bg-zinc-800/30"
              style={{ backdropFilter: 'blur(10px) brightness(0.8)', backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
-            //  style={{ backdropFilter: 'blur(10px) brightness(0.8)', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
         >
 
             <div className="sm:mx-4 sm:block">
                 <div className="space-x-4">
-                {/* <div className="flex space-x-4"> */}
                     {navigation.map((item) => (
                         <Link
                             key={item.name}
                             href={item.href}
-                            onClick={() => handleClick(item)}
+                            onClick={(event) => handleClick(item, event)}
                             className={classNames(
                                 'transition-colors duration-300',
                                 item === currentItem ? 'bg-gray-900 text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-700 hover:text-white',
