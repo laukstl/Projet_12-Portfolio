@@ -20,13 +20,13 @@ const robotoThin = Roboto({
 // });
 
 const montBlack = Montserrat({
-  subsets: ["latin"], weight: "900",
-  display: 'swap', variable: '--font-mont-black',
+    subsets: ["latin"], weight: "900",
+    display: 'swap', variable: '--font-mont-black',
 });
 
 const montExtrabold = Montserrat({
-  subsets: ["latin"], weight: "800",
-  display: 'swap', variable: '--font-mont-extrabold',
+    subsets: ["latin"], weight: "800",
+    display: 'swap', variable: '--font-mont-extrabold',
 });
 
 // const montBold = Montserrat({
@@ -35,8 +35,8 @@ const montExtrabold = Montserrat({
 // });
 
 const montSemiBold = Montserrat({
-  subsets: ["latin"], weight: "600",
-  display: 'swap', variable: '--font-mont-semibold',
+    subsets: ["latin"], weight: "600",
+    display: 'swap', variable: '--font-mont-semibold',
 });
 
 // const montMedium = Montserrat({
@@ -50,8 +50,8 @@ const montSemiBold = Montserrat({
 // });
 
 const montLight = Montserrat({
-  subsets: ["latin"], weight: "300",
-  display: 'swap', variable: '--font-mont-light',
+    subsets: ["latin"], weight: "300",
+    display: 'swap', variable: '--font-mont-light',
 });
 
 // const montExtraLight = Montserrat({
@@ -65,40 +65,42 @@ const montLight = Montserrat({
 // });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "Generated with React / NextJS / Tailwind",
+    title: "Portfolio",
+    description: "Generated with React / NextJS / Tailwind",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`
-          ${inter.className}
-          ${robotoThin.variable}
+    return (
+        <html lang="en" className="scroll-smooth">
 
-          ${montBlack.variable}
-          ${montExtrabold.variable}
-          ${montSemiBold.variable}
-          ${montLight.variable}
+            <body className={`
+                ${inter.className}
+                ${robotoThin.variable}
 
-          flex
-          items-center
-          flex-col
-          `}>
-          {/* ${robotoRegular.variable} */}
-          {/* ${robotoExtrabold.variable} */}
-          
-          {/* ${montBold.variable} */}
-          {/* ${montMedium.variable} */}
-          {/* ${montRegular.variable} */}
-          {/* ${montExtraLight.variable} */}
-          {/* ${montThin.variable} */}
-          {children}
-      </body>
-    </html>
-  );
+                ${montBlack.variable}
+                ${montExtrabold.variable}
+                ${montSemiBold.variable}
+                ${montLight.variable}
+
+                `}>
+                {/* ${robotoRegular.variable} */}
+                {/* ${robotoExtrabold.variable} */}
+
+                {/* ${montBold.variable} */}
+                {/* ${montMedium.variable} */}
+                {/* ${montRegular.variable} */}
+                {/* ${montExtraLight.variable} */}
+                {/* ${montThin.variable} */}
+
+                {/* Logofix : */}
+                <div className="overflow-hidden w-full flex justify-center">
+                    {children}
+                </div>
+            </body>
+        </html>
+    );
 }

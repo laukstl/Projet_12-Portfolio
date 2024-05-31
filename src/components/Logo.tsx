@@ -34,7 +34,8 @@ const LogoEtBackground = () => {
                     <img
                         src="/logo.webp"
                         alt="Logo L.C."
-                        className="min-w-[250px] w-[250px] min-h-[250px] h-[250px] transition-transform"
+                        className="min-w-64 w-64 min-h-64 h-64 transition-transform"
+                        // className="min-w-[250px] w-[250px] min-h-[250px] h-[250px] transition-transform"
                         onDragStart={handleDragStart}
                     />
                 </motion.div>

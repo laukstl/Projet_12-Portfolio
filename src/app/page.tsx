@@ -1,17 +1,17 @@
 
-import Image from "next/image";
-
 import AnimatedBackground from '../components/AnimatedBackground'
 import Navigation from "@/components/Navigation";
-import ProjectsGallery from "@/components/ProjectsGallery";
-import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
+import LogoPub from "@/components/LogoPub";
 import Logo from "@/components/Logo";
 import Competences from "@/components/Competences";
+import ProjectsGallery from "@/components/ProjectsGallery";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 function Home() {
     return (
-          <main id="top" className="ml-2 min-w-[375px] flex flex-col justify-between mt-[57px] sm:mt-[93px] lg:mt-[57px] max-w-screen-xl">
+          <main id="top" className="px-2 min-w-[375px] flex flex-col justify-between lg:mt-[57px] max-w-screen-xl
+          ">
 
             {/*** BACKGOUND ***/}
             <div className="-z-50">
@@ -19,31 +19,13 @@ function Home() {
             </div>
 
             {/*** NAVIGATION ***/}
-            <div className="z-50 ml-50">
+            <div className="z-40 ml-50">
                 <Navigation />
             </div>
 
-            {/*** LOGO ***/}
-            <div className="z-10 w-full font-mono text-sm lg:flex lg:justify-end lg:pr-[150px]">
-                <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-                    <a
-                        className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-                        href="https://www.kstl.fr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Powered by{" "}
-                        <Image
-                            src="/kstl_logo.webp"
-                            alt="Kstl Logo"
-                            className="dark:invert"
-                            width={75}
-                            height={45}
-                            style={{ height: 'auto' }}
-                            priority
-                        />
-                    </a>
-                </div>
+            {/*** PUB LOGO ***/}
+            <div className="z-40">
+                <LogoPub />
             </div>
 
             {/*** ABOUT ***/}
