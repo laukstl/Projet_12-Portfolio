@@ -17,7 +17,7 @@ export default function Contact() {
         const formData = new FormData(event.currentTarget);
         formData.append("access_key", "***REMOVED***");
 
-        // Convertir FormData en un objet de chaînes de caractères
+        // convertion de FormData en objet
         const object = Object.fromEntries(formData.entries()) as Record<string, string>;
 
         // check du pot de miel
