@@ -19,7 +19,7 @@ function Navigation() {
 
     const handleClick = (item: any, event: any) => {
         setCurrentItem(item);
-        if (item.href === '#competence') { // project ??
+        if (item.href === '#competence' || item.href === '#gallery') { // project ??
             event.preventDefault();
             scrollToSection(item.href);
         }
@@ -41,14 +41,13 @@ function Navigation() {
         // bandeau
         <div className="fixed ml-0 left-0 top-0 flex w-full justify-center py-0
                         border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl
-                        // dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit
                         md:p-4
-                        lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4 lg:dark:bg-zinc-800/30"
+                        lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4"
             style={{ backdropFilter: 'blur(10px) brightness(0.8)', backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
         >
 
             {/* container à bouttons */}
-            <div className="sm:mx-4 sm:block space-x-4">
+            <div className="sm:mx-4 sm:block space-x-2">
                 {/* bouttons */}
                 {navigation.map((item) => (
                     <Link

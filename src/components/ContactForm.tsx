@@ -1,17 +1,44 @@
 'use client'
 
-export default function Contact() {
-    async function handleSubmit(event: any) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
+import { useState } from 'react';
 
+interface FormErrors {
+    nameadza?: string;
+    emaildzas?: string;
+    message?: string;
+}
+
+export default function Contact() {
+    const [formStatus, setFormStatus] = useState<string>('');
+    const [formErrors, setFormErrors] = useState<FormErrors>({});
+
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
         formData.append("access_key", "***REMOVED***");
 
-        const object = Object.fromEntries(formData);
+        // Convertir FormData en un objet de chaînes de caractères
+        const object = Object.fromEntries(formData.entries()) as Record<string, string>;
 
-        if (!object.name && !object.email && object.nameadza && object.message) {
-            const json:any = JSON.stringify(object);
+        // check du pot de miel
+        if (object.username || object.useremail) {
+            setFormStatus('Une erreur s\'est produite. Veuillez réessayer.');
+            return;
+        }
 
+        // validation des champs
+        const errors = validateForm(object);
+        setFormErrors(errors);
+
+        if (Object.keys(errors).length > 0) {
+            setFormStatus('Veuillez corriger les erreurs dans le formulaire.');
+            return;
+        }
+
+        setFormErrors({});
+        const json: string = JSON.stringify(object);
+
+        try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
@@ -22,64 +49,76 @@ export default function Contact() {
             });
             const result = await response.json();
             if (result.success) {
-                alert("Votre message a bien été envoyé !");
+                setFormStatus('Votre message a bien été envoyé !');
+                event.currentTarget.reset(); // Vider les champs
+            } else {
+                setFormStatus('Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer.');
             }
+        } catch (error) {
+            setFormStatus('Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez vérifier votre connexion et réessayer.');
         }
     }
 
-    return (
-        <div className="min-w-[24rem] mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
+    function validateForm(object: Record<string, string>): FormErrors {
+        const errors: FormErrors = {};
+        if (!object.nameadza) errors.nameadza = "Le nom est requis.";
+        if (!object.emaildzas) {
+            errors.emaildzas = "L'email est requis.";
+        } else if (!/\S+@\S+\.\S+/.test(object.emaildzas)) {
+            errors.emaildzas = "Le format de l'email est invalide. Exemple: exemple@domaine.com";
+        }
+        if (!object.message) errors.message = "Le message est requis.";
+        return errors;
+    }
 
-                {/* Real fields */}
+    return (
+        <div className="min-w-20 mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
                 <label className="flex flex-col">
                     <span className="mb-1">Nom</span>
                     <input 
                         type="text" 
                         name="nameadza" 
-                        className="p-2 border rounded" 
+                        className={`p-2 border rounded ${formErrors.nameadza ? 'border-red-500' : ''}`} 
                         placeholder="Nom"
                         autoComplete="name"
                     />
+                    {formErrors.nameadza && <span className="text-red-500">{formErrors.nameadza}</span>}
                 </label>
                 <label className="flex flex-col">
                     <span className="mb-1">Email</span>
                     <input 
                         type="email" 
                         name="emaildzas" 
-                        className="p-2 border rounded" 
-                        placeholder="email@fai.fr"
+                        className={`p-2 border rounded ${formErrors.emaildzas ? 'border-red-500' : ''}`} 
+                        placeholder="exemple@domaine.com"
                         autoComplete="email"
                     />
+                    {formErrors.emaildzas && <span className="text-red-500">{formErrors.emaildzas}</span>}
                 </label>
                 <label className="flex flex-col">
                     <span className="mb-1">Message</span>
                     <textarea 
                         name="message" 
-                        className="p-2 border rounded" 
+                        className={`p-2 border rounded ${formErrors.message ? 'border-red-500' : ''}`} 
                         placeholder="Votre message..." 
                     />
+                    {formErrors.message && <span className="text-red-500">{formErrors.message}</span>}
                 </label>
 
-                {/* H o n e y p o t */}
-                <label className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10">
+                {/* Honeypot */}
+                <label className="hidden">
                     <input
-                        className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10"
-                        autoComplete="off"
                         type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Your name here"
+                        name="username"
+                        autoComplete="off"
                     />
                 </label>
-                <label className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10">
+                <label className="hidden">
                     <input
-                        className="opacity-0 absolute top-0 left-0 h-0 w-0 -z-10"
-                        autoComplete="off"
                         type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Your e-mail here"
+                        name="useremail"
+                        autoComplete="off"
                     />
                 </label>
 
@@ -91,8 +130,7 @@ export default function Contact() {
                     Envoyer un message
                 </button>
             </form>
+            {formStatus && <div className="mt-4 text-red-500">{formStatus}</div>}
         </div>
     );
-    
-
 }

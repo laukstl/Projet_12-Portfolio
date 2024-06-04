@@ -2,11 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 
-const AnimatedBackground = () => {
-    const canvasRef = useRef(null);
+interface ColorPropsType {
+    colorsLight: string[];
+    colorsDark: string[];
+}
+
+const AnimatedBackground = ({ colorsLight, colorsDark }: ColorPropsType) => {
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     useEffect(() => {
-        const canvas = canvasRef.current as HTMLCanvasElement | null;
+        const canvas = canvasRef.current;
 
         if (canvas) {
             const context = canvas.getContext('2d');
@@ -24,25 +29,32 @@ const AnimatedBackground = () => {
                 const drawGradient = () => {
                     context.clearRect(0, 0, width, height);
 
+                    // Déterminer si le mode sombre est activé
+                    const isDarkMode = document.documentElement.classList.contains('dark');
+
+                    // Utiliser les couleurs appropriées
+                    const colors = isDarkMode ? colorsDark : colorsLight;
+
                     const gradient = context.createLinearGradient(0, 0, width, height);
-                    gradient.addColorStop(0, `rgb(200, 200, 200)`);
-                    gradient.addColorStop(0.5 + 0.5 * Math.sin(time), `rgb(220, 220, 255)`);
-                    gradient.addColorStop(1, `rgb(255, 255, 255)`);
+                    gradient.addColorStop(0, colors[0]);
+                    gradient.addColorStop(0.5 + 0.5 * Math.sin(time), colors[1]);
+                    gradient.addColorStop(1, colors[2]);
 
                     context.fillStyle = gradient;
                     context.fillRect(0, 0, width, height);
 
-                    time += 0.02;
+                    time += 0.01;
                     requestAnimationFrame(drawGradient);
                 };
 
                 drawGradient();
             }
         }
-    }, []);
+    }, [colorsLight, colorsDark]);
 
     return (
         <canvas ref={canvasRef} className="w-full h-full fixed top-0 left-0"></canvas>
+        // <canvas ref={canvasRef} className="w-full h-full fixed top-0 left-0 dark:bg-black"></canvas>
     );
 };
 

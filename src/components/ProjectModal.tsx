@@ -53,6 +53,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
                     <Link
                         key={project.name}
                         href={project.href}
+                        target="_blank"
                         className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}
                     >
                         Site live
@@ -60,6 +61,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
 
                     <Link
                         href={project.git}
+                        target="_blank"
                         className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2'}
                     >
                         <GithubIcon />

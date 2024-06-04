@@ -4,12 +4,12 @@ import Image from "next/image";
 export const logo_listing = [
     { src: "./icons/html5.svg", alt: "Html", techno: "htm"  },
     { src: "./icons/css3.svg", alt: "Css", techno: "css"  },
-    { src: "./icons/scss.svg", alt: "Scss", techno: "sas"  },
     { src: "./icons/js.svg", alt: "Javascript", techno: "js" },
+    { src: "./icons/scss.svg", alt: "Scss", techno: "sas"  },
     { src: "./icons/ts.svg", alt: "Typescript", techno: "ts"  },
-    { src: "./icons/react.svg", alt: "React", techno: "rea"  },
     { src: "./icons/redux.svg", alt: "Redux", techno: "rtk"  },
     { src: "./icons/jest.svg", alt: "Jest", techno: "jst"  },
+    { src: "./icons/react.svg", alt: "React", techno: "rea"  },
     { src: "./icons/next-js.svg", alt: "Next", techno: "nxt"  },
     { src: "./icons/tailwind.svg", alt: "Tailwind", techno: "tlw"  },
 ]

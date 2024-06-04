@@ -9,13 +9,39 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 function Home() {
+    const LogoBackgroundColorsLight = [
+        "linear-gradient(180deg, #cc2222 0%, rgb(200, 200, 200) 100%)",
+        "linear-gradient(180deg, #eeeeee 0%, rgb(220, 220, 255) 100%)",
+        "linear-gradient(180deg, rgb(220, 220, 255) 0%, rgb(100, 100, 255) 100%)"
+    ];
+
+
+    const LogoBackgroundColorsDark = [
+        "linear-gradient(180deg, #0d0d0d 0%, #000000 100%)",  // plus sombre
+        "linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)",  // plus sombre
+        "linear-gradient(180deg, #262626 0%, #0d0d0d 100%)"   // plus sombre
+    ];
+
+    const AnimatedBackgroundColorsLight = [
+        "rgb(200, 200, 200)",
+        "rgb(220, 220, 255)",
+        "rgb(255, 255, 255)"
+    ];
+
+    const AnimatedBackgroundColorsDark = [
+        "rgb(13, 13, 13)",  // plus sombre
+        "rgb(210, 21, 21)",  // plus sombre
+        "rgb(26, 26, 26)"   // plus sombre
+    ];
+    
+
     return (
           <main id="top" className="px-2 min-w-[375px] flex flex-col justify-between lg:mt-[57px] max-w-screen-xl
           ">
 
             {/*** BACKGOUND ***/}
-            <div className="-z-50">
-                <AnimatedBackground />
+            <div className="-z-40">
+                <AnimatedBackground colorsLight={AnimatedBackgroundColorsLight} colorsDark={AnimatedBackgroundColorsDark}/>
             </div>
 
             {/*** NAVIGATION ***/}
@@ -30,7 +56,9 @@ function Home() {
 
             {/*** ABOUT ***/}
             <div id="about" className="flex flex-col items-center mt-20 md:flex-row md:gap-10 mx-auto p-4 md:p-8">
-                <Logo />
+                {/* Logo */}
+                <Logo colorsLight={LogoBackgroundColorsLight} colorsDark={LogoBackgroundColorsDark} />
+                
                 <div className="text-center z-20 mt-5 md:mt-0">
                     <h1 className="text-bold text-4xl md:text-8xl font-montBlack">Laurent Castell</h1>
                     <h2 className="text-gray-500 text-2xl md:text-6xl font-montExtraBold">Portfolio</h2>
