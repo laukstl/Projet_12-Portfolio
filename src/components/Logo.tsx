@@ -44,7 +44,7 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     <Image
                         src={logo}
                         alt="Logo L.C."
-                        className="min-w-64 w-64 min-h-64 h-64 transition-transform dark:invert"
+                        className="min-w-64 w-64 min-h-64 h-64 transition-transform"
                         onDragStart={handleDragStart}
                         priority
                     />

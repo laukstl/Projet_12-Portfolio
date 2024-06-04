@@ -15,7 +15,6 @@ function Home() {
         "linear-gradient(180deg, rgb(220, 220, 255) 0%, rgb(100, 100, 255) 100%)"
     ];
 
-
     const LogoBackgroundColorsDark = [
         "linear-gradient(180deg, #0d0d0d 0%, #000000 100%)",
         "linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)",
@@ -33,7 +32,6 @@ function Home() {
         "rgb(210, 21, 21)",
         "rgb(26, 26, 26)"
     ];
-    
 
     return (
           <main id="top" className="px-2 min-w-[375px] flex flex-col justify-between lg:mt-[57px] max-w-screen-xl

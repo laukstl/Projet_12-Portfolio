@@ -13,10 +13,17 @@ export default function Contact() {
     const [formErrors, setFormErrors] = useState<FormErrors>({});
     const formRef = useRef<HTMLFormElement>(null);
 
+    const access_key = process.env.NEXT_PUBLIC_ACCESS_KEY;
+
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        formData.append("access_key", "***REMOVED***");
+        if (access_key) {
+            formData.append("access_key", access_key);
+        } else {
+            console.error("Access key is not defined");
+            // return;
+        }
 
         // convertion de FormData en objet
         const object = Object.fromEntries(formData.entries()) as Record<string, string>;

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+// import Head from "next/head";
+
 import { Inter, Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -32,6 +34,16 @@ const montLight = Montserrat({
 export const metadata: Metadata = {
     title: "Portfolio",
     description: "Generated with React / NextJS / Tailwind",
+    alternates: {
+        canonical: './'
+    },
+    openGraph: {
+        title: 'Portfolio',
+        description: 'project 12: Portfolio',
+        images: './card.jpg',
+        type: 'website',
+        url: './'
+    }
 };
 
 export default function RootLayout({
