@@ -54,7 +54,7 @@ export default function RootLayout({
                 `}>
 
                 {/* Logofix : */}
-                <div className="overflow-hidden w-full flex justify-center bg-gray">
+                <div className="overflow-hidden w-full flex justify-center">
                     {children}
                 </div>
             </body>

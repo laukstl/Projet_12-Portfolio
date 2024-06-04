@@ -17,9 +17,9 @@ function Home() {
 
 
     const LogoBackgroundColorsDark = [
-        "linear-gradient(180deg, #0d0d0d 0%, #000000 100%)",  // plus sombre
-        "linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)",  // plus sombre
-        "linear-gradient(180deg, #262626 0%, #0d0d0d 100%)"   // plus sombre
+        "linear-gradient(180deg, #0d0d0d 0%, #000000 100%)",
+        "linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%)",
+        "linear-gradient(180deg, #262626 0%, #0d0d0d 100%)"
     ];
 
     const AnimatedBackgroundColorsLight = [
@@ -29,9 +29,9 @@ function Home() {
     ];
 
     const AnimatedBackgroundColorsDark = [
-        "rgb(13, 13, 13)",  // plus sombre
-        "rgb(210, 21, 21)",  // plus sombre
-        "rgb(26, 26, 26)"   // plus sombre
+        "rgb(13, 13, 13)",
+        "rgb(210, 21, 21)",
+        "rgb(26, 26, 26)"
     ];
     
 

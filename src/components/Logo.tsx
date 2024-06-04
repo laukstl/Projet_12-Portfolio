@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
 import Image from "next/image";
+import logo from "../../public/logo.webp";
 
 interface ColorPropsType {
     colorsLight: any;
@@ -24,18 +25,15 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
         <div>
             <div className="fixed top-0 left-0 w-full h-full -z-10">
                 <motion.div 
-                    className="absolute top-0 left-0 w-full h-full opacity-20" 
-                    // className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
+                    className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
                     style={{ background: background }}
                 />
-                <motion.div 
-                    className="absolute top-0 left-0 w-full h-full opacity-20" 
-                    // className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
+                {/* <motion.div 
+                    className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
                     style={{ background: backgroundDark }}
-                />
+                /> */}
             </div>
-            <div className="flex justify-center items-center">
-            {/* <div className="flex justify-center items-center dark:text-white"> */}
+            <div className="flex justify-center items-center dark:text-white">
                 <motion.div
                     className="box"
                     style={{ x }}
@@ -44,11 +42,9 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     dragElastic={1}
                 >
                     <Image
-                        src="/./logo.webp"
+                        src={logo}
                         alt="Logo L.C."
-                        className="min-w-64 w-64 min-h-64 h-64 transition-transform"
-                        width= {250}
-                        height= {250}
+                        className="min-w-64 w-64 min-h-64 h-64 transition-transform dark:invert"
                         onDragStart={handleDragStart}
                         priority
                     />

@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 interface FormErrors {
     nameadza?: string;
@@ -11,6 +11,7 @@ interface FormErrors {
 export default function Contact() {
     const [formStatus, setFormStatus] = useState<string>('');
     const [formErrors, setFormErrors] = useState<FormErrors>({});
+    const formRef = useRef<HTMLFormElement>(null);
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -43,18 +44,25 @@ export default function Contact() {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Accept: "application/json"
+                    Accept: "application/json",
                 },
-                body: json
+                body: json,
             });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
             const result = await response.json();
+
             if (result.success) {
                 setFormStatus('Votre message a bien été envoyé !');
-                event.currentTarget.reset(); // Vider les champs
+                formRef.current?.reset();
             } else {
                 setFormStatus('Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer.');
             }
         } catch (error) {
+            console.error('Error:', error);
             setFormStatus('Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez vérifier votre connexion et réessayer.');
         }
     }
@@ -73,7 +81,7 @@ export default function Contact() {
 
     return (
         <div className="min-w-20 mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col w-full space-y-4">
                 <label className="flex flex-col">
                     <span className="mb-1">Nom</span>
                     <input 
@@ -108,6 +116,7 @@ export default function Contact() {
 
                 {/* Honeypot */}
                 <label className="hidden">
+                    Username
                     <input
                         type="text"
                         name="username"
@@ -115,6 +124,7 @@ export default function Contact() {
                     />
                 </label>
                 <label className="hidden">
+                    Useremail
                     <input
                         type="email"
                         name="useremail"
