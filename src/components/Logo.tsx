@@ -42,7 +42,7 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     dragElastic={1}
                 >
                     <img
-                        src="/logo.webp"
+                        src="./logo.webp"
                         alt="Logo L.C."
                         className="min-w-64 w-64 min-h-64 h-64 transition-transform"
                         // className="min-w-64 w-64 min-h-64 h-64 transition-transform dark:invert"

@@ -1,6 +1,9 @@
 
 import Image from "next/image";
 
+const width = 35;
+const height = 35;
+
 export const logo_listing = [
     { src: "./icons/html5.svg", alt: "Html", techno: "htm"  },
     { src: "./icons/css3.svg", alt: "Css", techno: "css"  },
@@ -22,12 +25,12 @@ function Competences () {
                                 bg-slate-500 hover:bg-slate-400 text-white
                                 "
                                 key={item.techno}>
-                    <Image
-                    className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+                    <img
+                    className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8) w-[35px] h-[35px]"
                     src={item.src}
                     alt={`Technologie ${item.alt}`}
-                    width={35}
-                    height={35}
+                    // width={width}
+                    // height={height}
                     loading="lazy"
                     />
                     <div className="font-light text-semibold text-lg m-2 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">

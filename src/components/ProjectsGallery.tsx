@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import default_image from '/public/screenshots/erreur_card.webp';
+// import default_image from './screenshots/erreur_card.webp';
 import ProjectModal from './ProjectModal';
 import { logo_listing } from './Competences';
 
@@ -27,8 +27,8 @@ const projects: Project[] = [
         date: '09/2023',
         href: 'https://p3.kstl.fr',
         git: 'https://github.com/laukstl/Projet_booki/',
-        img: '/screenshots/3_booki_mid.png',
-        img_sm: '/screenshots/3_booki_low.png',
+        img: './screenshots/3_booki_mid.png',
+        img_sm: './screenshots/3_booki_low.png',
         techno: ['htm', 'css'],
         desc: "Ce projet était ma première rencontre avec le HTML/CSS et le 'responsive design' à partir d'une maquette sur Figma."
      },
@@ -39,8 +39,8 @@ const projects: Project[] = [
         date: '11/2023',
         href: 'https://p4.kstl.fr',
         git: 'https://github.com/laukstl/OC_omf',
-        img: '/screenshots/4_ohMyFood_mid.png',
-        img_sm: '/screenshots/4_ohMyFood_low.png',
+        img: './screenshots/4_ohMyFood_mid.png',
+        img_sm: './screenshots/4_ohMyFood_low.png',
         techno: ['htm', 'sas'],
         desc: "Ce projet avait pour but une approche 'mobile first' pour l'étendre à une version desktop, et l'extension des fonctionalités du css en utilisant le pré-processeur Sass."
      },
@@ -51,8 +51,8 @@ const projects: Project[] = [
         date: '01/2024',
         href: 'https://p8.kstl.fr',
         git: 'https://github.com/laukstl/kasa-localrepos',
-        img: '/screenshots/8_kasa_mid.png',
-        img_sm: '/screenshots/8_kasa_low.png',
+        img: './screenshots/8_kasa_mid.png',
+        img_sm: './screenshots/8_kasa_low.png',
         techno: ['rea', 'sas'],
         desc: "Ce projet avait pour but de faire nos premiers pas avec React et React Router : création des routes, découpage du site en components, utilisation d'une base de donnée, ..."
      },
@@ -63,8 +63,8 @@ const projects: Project[] = [
         date: '02/2024',
         href: 'https://p9.kstl.fr',
         git: 'https://github.com/laukstl/nina---New-way',
-        img: '/screenshots/9_nina_mid.png',
-        img_sm: '/screenshots/9_nina_low.png',
+        img: './screenshots/9_nina_mid.png',
+        img_sm: './screenshots/9_nina_low.png',
         techno: ['js'],
         desc: "Ce projet était tourné vers l'optimisation SEO en améliorant ses performances et son accessibilité ( optimisation du code et des assets, références aux réseaux sociaux, ... )"
      },
@@ -75,8 +75,8 @@ const projects: Project[] = [
         date: '03/2024',
         href: 'https://p10.kstl.fr',
         git: 'https://github.com/laukstl/Debuggez-une-application-ReactJS',
-        img: '/screenshots/10_724Events_mid.png',
-        img_sm: '/screenshots/10_724Events_low.png',
+        img: './screenshots/10_724Events_mid.png',
+        img_sm: './screenshots/10_724Events_low.png',
         techno: ['rea', 'jst'],
         desc: "Ce projet avait pour but de nous apprendre à débugger un site grâce aux outils tels que React Developper Tools, ainsi que s'assurer de son bon fonctionnemùent à l'aide de tests Jest."
      },
@@ -87,8 +87,8 @@ const projects: Project[] = [
         date: '04/2024',
         href: 'https://p11.kstl.fr',
         git: 'https://github.com/laukstl/ArgentBank',
-        img: '/screenshots/11_argentBank_mid.png',
-        img_sm: '/screenshots/11_argentBank_low.png',
+        img: './screenshots/11_argentBank_mid.png',
+        img_sm: './screenshots/11_argentBank_low.png',
         techno: ['ts', 'rtk', 'rea'],
         desc: "Ce projet nous demandait de découvrir Redux, mais m'a permis d'aller plus loin en découvrant Redux Tool Kit, son Query (RTKQ), le code splitting, ..."
      },
@@ -99,8 +99,8 @@ const projects: Project[] = [
         date: '05/24',
         href: 'https://p12.kstl.fr',
         git: 'https://github.com/laukstl/',
-        img: '/screenshots/12_portfolio_mid.png',
-        img_sm: '/screenshots/12_portfolio_low.png',
+        img: './screenshots/12_portfolio_mid.png',
+        img_sm: './screenshots/12_portfolio_low.png',
         techno: ['ts', 'rea', 'nxt', 'tlw'],
         desc: "Et enfin ce dernier projet nous laissant la liberté d'utiliser toutes nos connaissances pour développer un portfolio. C'est pourquoi j'ai décidé d'aller toujours plus loin en apprenant NextJS et TailwindCSS."
      },
@@ -126,10 +126,11 @@ function ProjectsGallery() {
                         <div className="flex flex-col min-w-[300px] w-full shadow-xl rounded-lg mob:h-auto">
 
                             {/* Screenshot du project */}
-                            <Image
-                                alt={'Image de' + item.name}
+                            <img
+                                alt={'Screenshot de ' + item.name}
                                 className="h-full rounded-lg w-full object-cover"
-                                src={item.img ? item.img : default_image}
+                                src={item.img }
+                                // src={item.img ? item.img : default_image}
                                 width={1280}
                                 height={890}
                             />
@@ -156,7 +157,8 @@ function ProjectsGallery() {
                                                 className="w-8 object-cover filter grayscale hover:filter-none transition-filter duration-300
                                                 sm:w-10
                                                 "
-                                                src={logo.src ? logo.src : default_image}
+                                                src={logo.src}
+                                                // src={logo.src ? logo.src : default_image}
                                                 width={35}
                                                 height={35}
                                             />

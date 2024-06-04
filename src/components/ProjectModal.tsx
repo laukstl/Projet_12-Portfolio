@@ -35,7 +35,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
                 alt={'Image de' + project.name}
                 className="w-1/5 h-full object-cover shadow-slate-300 shadow-lg
                             sm:w-full"
-                src={project.img_sm}
+                src={project?.img_sm}
             />
             
             {/* textes + buttons */}
