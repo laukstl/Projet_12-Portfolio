@@ -3,6 +3,8 @@
 import * as React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
+import Image from "next/image";
+
 interface ColorPropsType {
     colorsLight: any;
     colorsDark: any;
@@ -41,12 +43,14 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
                 >
-                    <img
-                        src="./logo.webp"
+                    <Image
+                        src="/./logo.webp"
                         alt="Logo L.C."
                         className="min-w-64 w-64 min-h-64 h-64 transition-transform"
-                        // className="min-w-64 w-64 min-h-64 h-64 transition-transform dark:invert"
+                        width= {250}
+                        height= {250}
                         onDragStart={handleDragStart}
+                        priority
                     />
                 </motion.div>
             </div>
