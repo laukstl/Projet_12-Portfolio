@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-// import default_image from './screenshots/erreur_card.webp';
 import ProjectModal from './ProjectModal';
 import { logo_listing } from './Competences';
 
@@ -119,7 +118,6 @@ function ProjectsGallery() {
                     <div
                         key={item.name}
                         className="rounded-lg laptop:p-4 first:ml-0 link relative max-w-[622px]"
-                        // onClick={() => setHoveredProject(item)}
                         onMouseEnter={() => setHoveredProject(item)}
                         onMouseLeave={() => setHoveredProject(null)}
                     >
@@ -130,7 +128,6 @@ function ProjectsGallery() {
                                 alt={'Screenshot de ' + item.name}
                                 className="h-full rounded-lg w-full object-cover"
                                 src={item.img }
-                                // src={item.img ? item.img : default_image}
                                 width={1280}
                                 height={890}
                             />
@@ -158,7 +155,6 @@ function ProjectsGallery() {
                                                 sm:w-10
                                                 "
                                                 src={logo.src}
-                                                // src={logo.src ? logo.src : default_image}
                                                 width={35}
                                                 height={35}
                                             />

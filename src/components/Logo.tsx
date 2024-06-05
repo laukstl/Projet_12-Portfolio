@@ -28,10 +28,11 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
                     style={{ background: background }}
                 />
-                {/* <motion.div 
-                    className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
+                <motion.div 
+                    // className="absolute top-0 left-0 w-full h-full opacity-0" 
+                    className="absolute top-0 left-0 w-full h-full opacity-0 dark:opacity-60" 
                     style={{ background: backgroundDark }}
-                /> */}
+                />
             </div>
             <div className="flex justify-center items-center dark:text-white">
                 <motion.div
@@ -44,7 +45,7 @@ const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
                     <Image
                         src={logo}
                         alt="Logo L.C."
-                        className="min-w-64 w-64 min-h-64 h-64 transition-transform"
+                        className="min-w-64 w-64 min-h-64 h-64 transition-transform dark:invert transition-scale duration-300 ease hover:scale-105"
                         onDragStart={handleDragStart}
                         priority
                     />

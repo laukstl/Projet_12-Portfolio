@@ -29,8 +29,8 @@ function Home() {
 
     const AnimatedBackgroundColorsDark = [
         "rgb(13, 13, 13)",
-        "rgb(210, 21, 21)",
-        "rgb(26, 26, 26)"
+        "rgb(1, 51, 51)",
+        "rgb(36, 36, 36)"
     ];
 
     return (
@@ -38,7 +38,7 @@ function Home() {
           ">
 
             {/*** BACKGOUND ***/}
-            <div className="-z-40">
+            <div className="-z-40 bg-black">
                 <AnimatedBackground colorsLight={AnimatedBackgroundColorsLight} colorsDark={AnimatedBackgroundColorsDark}/>
             </div>
 
@@ -59,7 +59,7 @@ function Home() {
                 
                 <div className="text-center z-20 mt-5 md:mt-0">
                     <h1 className="text-bold text-4xl md:text-8xl font-montBlack">Laurent Castell</h1>
-                    <h2 className="text-gray-500 text-2xl md:text-6xl font-montExtraBold">Portfolio</h2>
+                    <h2 className="text-gray-500 dark:text-gray-300 text-2xl md:text-6xl font-montExtraBold">Portfolio</h2>
                     <p className="italic mt-5 text-lg md:text-2xl font-montLight">"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
                 </div>
             </div>

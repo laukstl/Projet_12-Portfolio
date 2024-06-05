@@ -29,10 +29,8 @@ const AnimatedBackground = ({ colorsLight, colorsDark }: ColorPropsType) => {
                 const drawGradient = () => {
                     context.clearRect(0, 0, width, height);
 
-                    // Déterminer si le mode sombre est activé
+                    // const isDarkMode = true;
                     const isDarkMode = document.documentElement.classList.contains('dark');
-
-                    // Utiliser les couleurs appropriées
                     const colors = isDarkMode ? colorsDark : colorsLight;
 
                     const gradient = context.createLinearGradient(0, 0, width, height);
@@ -53,8 +51,7 @@ const AnimatedBackground = ({ colorsLight, colorsDark }: ColorPropsType) => {
     }, [colorsLight, colorsDark]);
 
     return (
-        <canvas ref={canvasRef} className="w-full h-full fixed top-0 left-0"></canvas>
-        // <canvas ref={canvasRef} className="w-full h-full fixed top-0 left-0 dark:bg-black"></canvas>
+        <canvas ref={canvasRef} className="w-full h-full fixed top-0 left-0 bg-white dark:bg-black"></canvas>
     );
 };
 

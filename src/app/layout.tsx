@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter, Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
 
+import Provider from '@/components/Provider';
+
 const inter = Inter({ subsets: ["latin"] });
 
 const robotoThin = Roboto({
@@ -34,9 +36,13 @@ const montLight = Montserrat({
 export const metadata: Metadata = {
     title: "Portfolio",
     description: "Generated with React / NextJS / Tailwind",
+
+    metadataBase: new URL('https://kstl.fr'),
+
     alternates: {
         canonical: './'
     },
+
     openGraph: {
         title: 'Portfolio',
         description: 'project 12: Portfolio',
@@ -65,10 +71,11 @@ export default function RootLayout({
 
                 `}>
 
-                {/* Logofix : */}
-                <div className="overflow-hidden w-full flex justify-center">
-                    {children}
-                </div>
+                <Provider>
+                    <div className="overflow-hidden w-full flex justify-center text-black dark:text-white transition-colors duration-300"> {/* Logofix : */}
+                        {children}
+                    </div>
+                </Provider>
             </body>
         </html>
     );

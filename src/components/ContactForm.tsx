@@ -94,31 +94,31 @@ export default function Contact() {
                     <input 
                         type="text" 
                         name="nameadza" 
-                        className={`p-2 border rounded ${formErrors.nameadza ? 'border-red-500' : ''}`} 
+                        className={`p-2 border rounded ${formErrors.nameadza ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
                         placeholder="Nom"
                         autoComplete="name"
                     />
-                    {formErrors.nameadza && <span className="text-red-500">{formErrors.nameadza}</span>}
+                    {formErrors.nameadza && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.nameadza}</span>}
                 </label>
                 <label className="flex flex-col">
                     <span className="mb-1">Email</span>
                     <input 
                         type="email" 
                         name="emaildzas" 
-                        className={`p-2 border rounded ${formErrors.emaildzas ? 'border-red-500' : ''}`} 
+                        className={`p-2 border rounded ${formErrors.emaildzas ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
                         placeholder="exemple@domaine.com"
                         autoComplete="email"
                     />
-                    {formErrors.emaildzas && <span className="text-red-500">{formErrors.emaildzas}</span>}
+                    {formErrors.emaildzas && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.emaildzas}</span>}
                 </label>
                 <label className="flex flex-col">
                     <span className="mb-1">Message</span>
                     <textarea 
                         name="message" 
-                        className={`p-2 border rounded ${formErrors.message ? 'border-red-500' : ''}`} 
+                        className={`p-2 border rounded ${formErrors.message ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
                         placeholder="Votre message..." 
                     />
-                    {formErrors.message && <span className="text-red-500">{formErrors.message}</span>}
+                    {formErrors.message && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.message}</span>}
                 </label>
 
                 {/* Honeypot */}
@@ -147,7 +147,7 @@ export default function Contact() {
                     Envoyer un message
                 </button>
             </form>
-            {formStatus && <div className="mt-4 text-red-500">{formStatus}</div>}
+            {formStatus && <div className="mt-4 text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formStatus}</div>}
         </div>
     );
 }

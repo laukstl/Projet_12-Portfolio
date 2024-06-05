@@ -16,9 +16,13 @@
   }
 }
 
-/* html {
-  scroll-behavior: smooth;
-} */
+html {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   min-width: 375px;
+   /* padding: 20px; */
+   width: 100%;
+}
 
 @layer utilities {
   .text-balance {
