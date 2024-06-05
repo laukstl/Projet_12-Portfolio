@@ -1,21 +1,48 @@
-## Projet d'Etudiant
+# Portfolio de Développeur
 
-#Gagnez en visibilité grâce à votre portfolio
+Bienvenue sur le projet de portfolio d'un étudiant de la formation OpenClassrooms. Ce projet a été réalisé dans le cadre de la formation "Développeur/Intégrateur Web" et a pour objectif de créer et publier en ligne un portfolio professionnel.
 
-## Présentation
+## Qu'allez-vous apprendre dans ce projet ?
 
-Ce projet nous propose de créer votre propre site portfolio, un outil indispensable pour tout développeur. Il vous permettra de :
+### Objectifs Pédagogiques
+- **Déployer un site statique en ligne** : Utiliser GitHub Pages pour rendre votre portfolio accessible au public.
+- **Responsive Design** : Assurer que votre site s'affiche correctement sur tous les appareils.
+- **Debugging et Optimisation** : Améliorer la performance du code et le référencement SEO.
 
-    Vous présenter et mettre en avant vos compétences
-    Montrer vos réalisations et les projets sur lesquels vous avez travaillé
+### Compétences Développées
+- Création de sites web personnels.
+- Déploiement de sites web statiques.
+- Responsive design et expérience utilisateur.
+- Optimisation du code et référencement SEO.
 
-## Objectifs
+## Présentation du Projet
 
-Deux objectifs principaux sont visés à travers ce projet :
+### Pourquoi ce projet est-il important pour votre carrière ?
 
-   - Démontrer vos compétences techniques via le code du site et son interface
-   - Mettre en avant votre personnalité et votre style en personnalisant votre portfolio
+La création d'un portfolio en ligne est essentielle pour tout développeur cherchant à se faire remarquer et à décrocher des opportunités professionnelles. Les compétences acquises dans ce projet, telles que le déploiement en ligne et l'optimisation SEO, sont fondamentales dans le domaine du développement web. De plus, un site responsive et professionnel démontre votre souci du détail et votre compréhension des bonnes pratiques de design web.
 
-## Liberté de création
+### Scénario
 
-Ce projet vous laisse une grande liberté dans le choix des technologies et du design de votre site. Vous pouvez opter pour la simplicité avec HTML et CSS, ou bien utiliser un framework plus complet pour mettre en avant vos compétences.
+Pour ce projet, vous allez créer votre site portfolio que vous pourrez présenter aux recruteurs. Il s’agit d’un outil incontournable pour le développeur, qui a deux objectifs :
+- **Se présenter** : Lister vos compétences et montrer les projets sur lesquels vous avez travaillé.
+- **Démontrer vos compétences** : Via le code du site lui-même ainsi que son interface.
+
+Vous pouvez choisir des technologies simples (HTML + CSS) ou adopter une technologie plus complète pour mettre en avant vos compétences spécifiques.
+
+### Contraintes du Projet
+
+Pour être validé, votre site portfolio devra :
+- Présenter votre profil de développeur : formation(s) suivie(s) et compétences.
+- Présenter au moins 2 projets : Pour chaque projet, afficher une description, les compétences développées, et un lien vers le code ou le site.
+- Être accessible en ligne via internet (préférablement sur GitHub Pages).
+- Être responsive : s'afficher correctement sur mobile et tablette.
+
+### Recommandations
+
+- **Ciblez les compétences importantes pour vous** : Utilisez ce projet pour explorer de nouvelles compétences ou retravailler certains sujets.
+- **Adaptez vos ambitions à votre temps disponible** : Vous pouvez réutiliser une base de code existante ou utiliser un modèle de portfolio disponible en ligne.
+- **Optez pour une interface professionnelle** : Offrez un design clair, élégant et cohérent. Utilisez une grille, respectez les espacements, et maintenez une palette de couleurs simple et une typographie limitée.
+
+---
+
+Ce projet a été réalisé dans le cadre de la formation "Développeur Web" d'OpenClassrooms.
