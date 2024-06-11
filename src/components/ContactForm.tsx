@@ -47,6 +47,7 @@ export default function Contact() {
         const json: string = JSON.stringify(object);
 
         try {
+            // const response = await fetch("http://localhost:3532/submit", {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {

@@ -5,6 +5,8 @@ import Image from 'next/image';
 import ProjectModal from './ProjectModal';
 import { logo_listing } from './Competences';
 
+// import { ListBulletIcon } from '@heroicons/react/24/outline';
+
 export interface Project {
     prjt_numb: number;
     name: string;
@@ -109,6 +111,8 @@ function ProjectsGallery() {
     const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
 
     return (
+        <>
+        {/* <ListBulletIcon className="w-6 h-6 text-gray-900 " role="button" /> */}
         <div className="flex flex-col items-center w-full
                         lg:grid lg:grid-cols-2 gap-2 md:gap-5
         ">
@@ -170,6 +174,7 @@ function ProjectsGallery() {
                 );
             })}
         </div>
+        </>
     );
 }
 
