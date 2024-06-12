@@ -1,12 +1,13 @@
 
 import AnimatedBackground from '../components/AnimatedBackground'
-import Navigation from "@/components/Navigation";
-import LogoPub from "@/components/LogoPub";
-import Logo from "@/components/Logo";
-import Competences from "@/components/Competences";
-import ProjectsGallery from "@/components/ProjectsGallery";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
+import Navigation from "../components/Navigation";
+import LogoPub from "../components/LogoPub";
+import Logo from "../components/Logo";
+import Competences from "../components/Competences";
+import ProjectsGallery from "../components/ProjectsGallery";
+import ContactForm from "../components/ContactForm";
+import Footer from "../components/Footer";
+import { Suspense } from 'react';
 
 function Home() {
     const LogoBackgroundColorsLight = [
@@ -22,7 +23,7 @@ function Home() {
     ];
 
     const AnimatedBackgroundColorsLight = [
-        "rgb(200, 200, 200)",
+        "rgb(170, 200, 200)",
         "rgb(220, 220, 255)",
         "rgb(255, 255, 255)"
     ];
@@ -58,7 +59,7 @@ function Home() {
                 <Logo colorsLight={LogoBackgroundColorsLight} colorsDark={LogoBackgroundColorsDark} />
                 
                 <div className="text-center z-20 mt-5 md:mt-0">
-                    <h1 className="text-bold text-4xl md:text-8xl font-montBlack">Laurent Castell</h1>
+                    <h1 className="text-bold text-4xl md:text-8xl font-montBlack">Laurent C.</h1>
                     <h2 className="text-gray-500 dark:text-gray-300 text-2xl md:text-6xl font-montExtraBold">Portfolio</h2>
                     <p className="italic mt-5 text-lg md:text-2xl font-montLight">"Passionné par l'intégration web, je vous invite à découvrir mes premiers pas dans ce monde captivant."</p>
                 </div>
@@ -85,7 +86,9 @@ function Home() {
             <div id="contact" className="w-full mt-20">
                 <h2 className="text-3xl mb-2 font-robotoThin">Pour me contacter :</h2>
                 <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
+                <Suspense>
                 <ContactForm />
+                </Suspense>
             </div>
 
             {/*** FOOTER ***/}

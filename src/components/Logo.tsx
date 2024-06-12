@@ -11,26 +11,26 @@ interface ColorPropsType {
     colorsDark: any;
 }
 
-const LogoEtBackground = ({ colorsLight, colorsDark }:ColorPropsType) => {
+const LogoEtBackground = ({ colorsLight, colorsDark }: ColorPropsType) => {
     const x = useMotionValue(0);
     const xInput = [-100, 0, 100];
     const background = useTransform(x, xInput, colorsLight);
     const backgroundDark = useTransform(x, xInput, colorsDark);
 
-    const handleDragStart = (event:any) => {
+    const handleDragStart = (event: any) => {
         event.preventDefault();
     };
 
     return (
         <div>
             <div className="fixed top-0 left-0 w-full h-full -z-10">
-                <motion.div 
-                    className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60" 
+                <motion.div
+                    className="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-60"
                     style={{ background: background }}
                 />
-                <motion.div 
+                <motion.div
                     // className="absolute top-0 left-0 w-full h-full opacity-0" 
-                    className="absolute top-0 left-0 w-full h-full opacity-0 dark:opacity-60" 
+                    className="absolute top-0 left-0 w-full h-full opacity-0 dark:opacity-60"
                     style={{ background: backgroundDark }}
                 />
             </div>

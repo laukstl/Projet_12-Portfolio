@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import type { Project } from "./ProjectsGallery";
+import type { Project } from "./projectsData";
 import Link from 'next/link';
 import { GithubIcon } from './icons';
 
@@ -16,7 +16,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
 
         // zoom BOUNCE
         <motion.div
-        className="box absolute inset-0 bg-white bg-opacity-95 flex gap-2 items-center justify-center z-20 rounded-lg p-4 shadow-xl overflow-hidden"
+        className="box absolute inset-0 bg-white bg-opacity-95 flex gap-2 items-center justify-center z-20 rounded-lg dark:rounded-none p-4 shadow-xl overflow-hidden"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -54,7 +54,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
                         key={project.name}
                         href={project.href}
                         target="_blank"
-                        className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}
+                        className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md dark:rounded-none px-3 py-2 text-sm font-medium'}
                     >
                         Site live
                     </Link>
@@ -62,7 +62,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
                     <Link
                         href={project.git}
                         target="_blank"
-                        className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2'}
+                        className={'transition-colors duration-300 bg-gray-200 text-gray-500 hover:bg-gray-700 hover:text-white rounded-md dark:rounded-none px-3 py-2'}
                     >
                         <GithubIcon />
                     </Link>

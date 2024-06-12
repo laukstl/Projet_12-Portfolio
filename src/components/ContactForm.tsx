@@ -2,6 +2,10 @@
 
 import { useState, useRef } from 'react';
 
+import UseAnimations from 'react-useanimations';
+// EVERY ANIMATION NEEDS TO BE IMPORTED FIRST -> YOUR BUNDLE WILL INCLUDE ONLY WHAT IT NEEDS
+import loading from 'react-useanimations/lib/loading';
+
 interface FormErrors {
     nameadza?: string;
     emaildzas?: string;
@@ -11,6 +15,7 @@ interface FormErrors {
 export default function Contact() {
     const [formStatus, setFormStatus] = useState<string>('');
     const [formErrors, setFormErrors] = useState<FormErrors>({});
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const formRef = useRef<HTMLFormElement>(null);
 
     const access_key = process.env.NEXT_PUBLIC_ACCESS_KEY;
@@ -22,7 +27,7 @@ export default function Contact() {
             formData.append("access_key", access_key);
         } else {
             console.error("Access key is not defined");
-            // return;
+            return;
         }
 
         // convertion de FormData en objet
@@ -47,6 +52,7 @@ export default function Contact() {
         const json: string = JSON.stringify(object);
 
         try {
+            setIsLoading(true);
             // const response = await fetch("http://localhost:3532/submit", {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -72,6 +78,8 @@ export default function Contact() {
         } catch (error) {
             console.error('Error:', error);
             setFormStatus('Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez vérifier votre connexion et réessayer.');
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -95,9 +103,10 @@ export default function Contact() {
                     <input 
                         type="text" 
                         name="nameadza" 
-                        className={`p-2 border rounded ${formErrors.nameadza ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
+                        className={`p-2 border rounded dark:rounded-none ${formErrors.nameadza ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
                         placeholder="Nom"
                         autoComplete="name"
+                        // required
                     />
                     {formErrors.nameadza && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.nameadza}</span>}
                 </label>
@@ -106,9 +115,10 @@ export default function Contact() {
                     <input 
                         type="email" 
                         name="emaildzas" 
-                        className={`p-2 border rounded ${formErrors.emaildzas ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
+                        className={`p-2 border rounded dark:rounded-none ${formErrors.emaildzas ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
                         placeholder="exemple@domaine.com"
                         autoComplete="email"
+                        // required
                     />
                     {formErrors.emaildzas && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.emaildzas}</span>}
                 </label>
@@ -116,8 +126,9 @@ export default function Contact() {
                     <span className="mb-1">Message</span>
                     <textarea 
                         name="message" 
-                        className={`p-2 border rounded ${formErrors.message ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
-                        placeholder="Votre message..." 
+                        className={`p-2 border rounded dark:rounded-none ${formErrors.message ? 'border-red-500' : ''} dark:bg-white dark:text-black`} 
+                        placeholder="Votre message..."
+                        // required
                     />
                     {formErrors.message && <span className="text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formErrors.message}</span>}
                 </label>
@@ -142,10 +153,11 @@ export default function Contact() {
 
                 {/* Submit button */}
                 <button 
-                    type="submit" 
-                    className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded"
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded dark:rounded-none flex gap-3 justify-center"
                 >
-                    Envoyer un message
+                    Envoyer un message {isLoading && <UseAnimations animation={loading} strokeColor={'#FFF'} />}
                 </button>
             </form>
             {formStatus && <div className="mt-4 text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formStatus}</div>}

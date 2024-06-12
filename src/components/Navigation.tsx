@@ -45,7 +45,8 @@ function Navigation() {
                         border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl
                         dark:border-black dark:from-zinc-800 dark:bg-gray-800
                         md:p-4
-                        lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4"
+                        lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4
+                        dark:rounded-none"
             style={{ backdropFilter: 'blur(10px) brightness(0.8)', backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
         >   
             <div>
@@ -62,7 +63,7 @@ function Navigation() {
                         href={item.href}
                         onClick={(event) => handleClick(item, event)}
                         className={classNames(
-                            'transition-colors duration-300 rounded-md px-1 py-1 sm:px-3 sm:py-2 text-sm font-montSemiBold drop-shadow-md border-b border-gray-400 text-center',
+                            'transition-colors duration-300 rounded-md dark:rounded-none px-1 py-1 sm:px-3 sm:py-2 text-sm font-montSemiBold drop-shadow-md border-b border-gray-400 text-center',
                             item === currentItem ? 'bg-gray-900 text-white dark:bg-gray-200 dark:text-gray-800' : 'bg-gray-200 text-gray-800 hover:bg-gray-700 hover:text-white dark:bg-gray-600 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white',
                             'md:filter-none',
                             'lg:filter-none lg:border-none',
