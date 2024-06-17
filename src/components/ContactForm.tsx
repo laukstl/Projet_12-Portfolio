@@ -18,17 +18,10 @@ export default function Contact() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const formRef = useRef<HTMLFormElement>(null);
 
-    const access_key = process.env.NEXT_PUBLIC_ACCESS_KEY;
-
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        if (access_key) {
-            formData.append("access_key", access_key);
-        } else {
-            console.error("Access key is not defined");
-            return;
-        }
+
 
         // convertion de FormData en objet
         const object = Object.fromEntries(formData.entries()) as Record<string, string>;
@@ -53,8 +46,7 @@ export default function Contact() {
 
         try {
             setIsLoading(true);
-            // const response = await fetch("http://localhost:3532/submit", {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
