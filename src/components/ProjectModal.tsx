@@ -14,6 +14,7 @@ const ProjectModal = ({ project }: { project: Project }) => {
         //     className="absolute inset-0 bg-white bg-opacity-95 flex gap-2 items-center justify-center z-20 rounded-lg p-4 shadow-xl overflow-hidden"
         // >
 
+
         // zoom BOUNCE
         <motion.div
         className="box absolute inset-0 bg-white bg-opacity-95 flex gap-2 items-center justify-center z-20 rounded-lg dark:rounded-none p-4 shadow-xl overflow-hidden"
@@ -33,19 +34,16 @@ const ProjectModal = ({ project }: { project: Project }) => {
             {/* screenshot */}
             <img
                 alt={'Image de' + project.name}
-                className="w-1/5 h-full object-cover shadow-slate-300 shadow-lg
-                            sm:w-full"
+                className="w-1/5 h-full object-cover shadow-slate-300 shadow-lg sm:w-full"
                 src={project?.img_sm}
             />
             
             {/* textes + buttons */}
             <div className="w-full text-center mb-12">
                 {/* textes */}
-                <h2 className="text-xl font-bold mb-4
-                                sm:text-3xl"
+                <h2 className="text-xl font-bold mb-4 sm:text-3xl"
                 >{project.pname}</h2>
-                <p className="text-xs drop-shadow-[0_1.2px_1.2px_rgba(100,100,100,0.5)]
-                                sm:text-sm "
+                <p className="text-xs text-black drop-shadow-[0_1.2px_1.2px_rgba(100,100,100,0.5)] sm:text-sm"
                 >{project.desc}</p>
 
                 {/* container à buttons */}

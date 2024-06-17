@@ -22,7 +22,7 @@ export const projects: Project[] = [
         img: '/screenshots/3_booki_mid.png',
         img_sm: './screenshots/3_booki_low.png',
         techno: ['htm', 'css'],
-        desc: "Ce projet était ma première rencontre avec le HTML/CSS et le 'responsive design' à partir d'une maquette sur Figma."
+        desc: "Ce projet a marqué ma première incursion dans le domaine du HTML/CSS et du 'responsive design', à partir d'une maquette sur Figma que j'ai dû suivre méticuleusement, respectant ainsi le travail du designer UI."
     },
     {
         prjt_numb: 4,
@@ -34,7 +34,7 @@ export const projects: Project[] = [
         img: '/screenshots/4_ohMyFood_mid.png',
         img_sm: './screenshots/4_ohMyFood_low.png',
         techno: ['htm', 'sas'],
-        desc: "Ce projet avait pour but une approche 'mobile first' pour l'étendre à une version desktop, et l'extension des fonctionalités du css en utilisant le pré-processeur Sass."
+        desc: "Cet projet visait à adopter une approche 'mobile first' pour ensuite l'étendre à une version desktop, tout en enrichissant les fonctionnalités du CSS grâce à l'utilisation du pré-processeur Sass."
     },
     {
         prjt_numb: 8,
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         img: '/screenshots/8_kasa_mid.png',
         img_sm: './screenshots/8_kasa_low.png',
         techno: ['rea', 'sas'],
-        desc: "Ce projet avait pour but de faire nos premiers pas avec React et React Router : création des routes, découpage du site en components, utilisation d'une base de donnée, ..."
+        desc: "Cet projet était une introduction à React et React Router : nous avons créé des routes, découpé le site en composants, et utilisé une base de données pour explorer les bases de ces technologies."
     },
     {
         prjt_numb: 9,
@@ -58,7 +58,7 @@ export const projects: Project[] = [
         img: '/screenshots/9_nina_mid.png',
         img_sm: './screenshots/9_nina_low.png',
         techno: ['js'],
-        desc: "Ce projet était tourné vers l'optimisation SEO en améliorant ses performances et son accessibilité ( optimisation du code et des assets, références aux réseaux sociaux, ... )"
+        desc: "Cet projet était axé sur l'optimisation SEO en améliorant ses performances et son accessibilité, notamment par l'optimisation du code et des ressources, ainsi que l'intégration de références aux réseaux sociaux."
     },
     {
         prjt_numb: 11,
@@ -70,7 +70,7 @@ export const projects: Project[] = [
         img: '/screenshots/11_argentBank_mid.png',
         img_sm: './screenshots/11_argentBank_low.png',
         techno: ['ts', 'rtk', 'rea'],
-        desc: "Ce projet nous demandait de découvrir Redux, mais m'a permis d'aller plus loin en découvrant Redux Tool Kit, son Query (RTKQ), le code splitting, ..."
+        desc: "Cet projet nous invitait à explorer Redux, mais m'a également offert l'opportunité d'approfondir mes connaissances en découvrant Redux Toolkit, notamment son Query (RTKQ), ainsi que le code splitting, et bien d'autres fonctionnalités."
     },
     {
         prjt_numb: 12,
@@ -82,6 +82,6 @@ export const projects: Project[] = [
         img: '/screenshots/12_portfolio_mid.png',
         img_sm: './screenshots/12_portfolio_low.png',
         techno: ['ts', 'nxt', 'tlw', 'njs', 'xps'],
-        desc: "Et enfin ce dernier projet nous laissant la liberté d'utiliser toutes nos connaissances pour développer un portfolio. C'est pourquoi j'ai décidé d'aller toujours plus loin en apprenant NextJS et TailwindCSS."
+        desc: "Pour ce dernier projet, nous avions carte blanche pour utiliser toutes nos connaissances afin de développer un portfolio. J'ai donc choisi de pousser mes limites en apprenant Next.js et Tailwind CSS."
     }
 ];
