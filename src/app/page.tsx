@@ -7,7 +7,7 @@ import Competences from "../components/Competences";
 import ProjectsGallery from "../components/ProjectsGallery";
 import ContactForm from "../components/ContactForm";
 import Footer from "../components/Footer";
-import { Suspense } from 'react';
+import { Suspense } from 'react'; // FIXME: WHYYY j'ai un suspense tout seul
 
 function Home() {
     const LogoBackgroundColorsLight = [
@@ -68,14 +68,14 @@ function Home() {
 
             {/*** COMPETENCES ***/}
             <div id="competence" className="mt-20 items-start">
-                <h2 className="text-3xl mb-2 font-robotoThin">Compétences acquises :</h2>
+                <h3 className="text-3xl mb-2 font-robotoThin">Compétences acquises :</h3>
                 <hr className="z-5 border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <Competences />
             </div>
 
             {/*** GALLERY ***/}
             <div id="gallery" className="mt-20 z-20 md:z-0">
-                <h2 className="text-3xl font-robotoThin">Derniers projets :</h2>
+                <h3 className="text-3xl font-robotoThin">Derniers projets :</h3>
                 <hr className="border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <div className="z-20 ">
                     <ProjectsGallery />
@@ -84,10 +84,10 @@ function Home() {
 
             {/*** FORM ***/}
             <div id="contact" className="w-full mt-20">
-                <h2 className="text-3xl mb-2 font-robotoThin">Pour me contacter :</h2>
+                <h3 className="text-3xl mb-2 font-robotoThin">Pour me contacter :</h3>
                 <hr className="z-10 border-t-1 border-gray-400 w-full mx-auto my-4" />
                 <Suspense>
-                <ContactForm />
+                    <ContactForm />
                 </Suspense>
             </div>
 

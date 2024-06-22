@@ -6,14 +6,14 @@ export const logo_listing = [
     { src: "./icons/css3.svg", alt: "Css", techno: "css", w: 1024, h: 1024 },
     { src: "./icons/js.svg", alt: "Javascript", techno: "js", w: 2500, h: 2500 },
     { src: "./icons/scss.svg", alt: "Scss", techno: "sas", w: 800, h: 800 },
+    { src: "./icons/nodejs.svg", alt: "NodeJS", techno: "njs", w: 2500, h: 1533 },
     { src: "./icons/ts.svg", alt: "Typescript", techno: "ts", w: 2500, h: 2500  },
     { src: "./icons/redux.svg", alt: "Redux", techno: "rtk", w: 2500, h: 2383 },
     { src: "./icons/jest.svg", alt: "Jest", techno: "jst", w: 800, h: 800 },
     { src: "./icons/react.svg", alt: "React", techno: "rea", w: 2194, h: 2500 },
-    { src: "./icons/next-js.svg", alt: "Next", techno: "nxt", w: 1024, h: 1024 },
     { src: "./icons/tailwind.svg", alt: "Tailwind", techno: "tlw", w: 54, h: 33 },
-    { src: "./icons/nodejs.svg", alt: "NodeJS", techno: "njs", w: 2500, h: 1533 },
-    { src: "./icons/express.svg", alt: "Express", techno: "xps", w: 800, h: 800 },
+    { src: "./icons/next-js.svg", alt: "Next", techno: "nxt", w: 1024, h: 1024 },
+    // { src: "./icons/express.svg", alt: "Express", techno: "xps", w: 800, h: 800 },
 ]
 
 function Competences () {

@@ -1,81 +1,75 @@
 import type { Metadata } from "next";
-// import Head from "next/head";
-
-import { Inter, Roboto, Montserrat } from "next/font/google";
-import "./globals.css";
-
+import Script from "next/script";
 import Provider from '../components/Provider';
+import { inter, robotoThin, montBlack, montExtrabold, montSemiBold, montLight } from "./fonts";
+import "./globals.css";
+import { LocalBusiness, WithContext } from "schema-dts";
 
-const inter = Inter({ subsets: ["latin"] });
 
-const robotoThin = Roboto({
-    subsets: ["latin"], weight: "100",
-    display: 'swap', variable: '--font-roboto-thin',
-});
-
-const montBlack = Montserrat({
-    subsets: ["latin"], weight: "900",
-    display: 'swap', variable: '--font-mont-black',
-});
-
-const montExtrabold = Montserrat({
-    subsets: ["latin"], weight: "800",
-    display: 'swap', variable: '--font-mont-extrabold',
-});
-
-const montSemiBold = Montserrat({
-    subsets: ["latin"], weight: "600",
-    display: 'swap', variable: '--font-mont-semibold',
-});
-
-const montLight = Montserrat({
-    subsets: ["latin"], weight: "300",
-    display: 'swap', variable: '--font-mont-light',
-});
+const descriptionText = "Découvrez le portfolio de Laurent C., développeur web spécialisé en React, NextJS et Tailwind. Explorez mes projets récents et contactez-moi!";
+const titleText = "Portfolio de Laurent C.";
+const urlBase = './';
 
 export const metadata: Metadata = {
-    title: "Portfolio",
-    description: "Generated with React / NextJS / Tailwind",
-
+    title: titleText,
+    description: descriptionText,
     metadataBase: new URL('https://kstl.fr'),
 
     alternates: {
-        canonical: './'
+        canonical: urlBase,
     },
 
     openGraph: {
-        title: 'Portfolio',
-        description: 'project 12: Portfolio',
-        images: './card.jpg',
+        title: titleText,
+        description: descriptionText,
+        images: [
+            {
+                url: `${urlBase}card.jpg`,
+                alt: 'Carte de visite',
+            },
+        ],
         type: 'website',
-        url: './'
+        url: urlBase,
     }
 };
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+    const jsonLd: WithContext<LocalBusiness> = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: "Laurent C. Intégrateur Web",
+        description: descriptionText,
+        email: 'laurent@kstl.fr',
+        founder: 'Laurent C.',
+        foundingDate: '2024',
+        foundingLocation: 'Paris, France',
+        logo : './logo.png',
+    }
+
     return (
-        <html lang="en" className="scroll-smooth">
-            <body className={`
+        <>
+            <Script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+           />
+
+            <html lang="en" className="scroll-smooth">
+                <body className={`
                 ${inter.className}
                 ${robotoThin.variable}
-
                 ${montBlack.variable}
                 ${montExtrabold.variable}
                 ${montSemiBold.variable}
                 ${montLight.variable}
-
                 `}>
-
-                <Provider>
-                    <div className="overflow-hidden w-full flex justify-center text-black dark:text-white transition-colors duration-300"> {/* Logofix : */}
-                        {children}
-                    </div>
-                </Provider>
-            </body>
-        </html>
+                    <Provider>
+                        <div className="overflow-hidden w-full flex justify-center text-black dark:text-white transition-colors duration-300">
+                            {children}
+                        </div>
+                    </Provider>
+                </body>
+            </html>
+        </>
     );
 }

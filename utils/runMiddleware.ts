@@ -1,19 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export const runMiddleware = (req: NextApiRequest, res: NextApiResponse, middlewares: any[]) => {
+// fonction qui prend un middleware en argument et le convertit en Promise pour etre utilisé en async dans le handler
+export const runMiddleware = (req: NextApiRequest, res: NextApiResponse, fn: any) => {
   return new Promise((resolve, reject) => {
-    const run = (index: number) => {
-      if (index >= middlewares.length) {
-        return resolve(null);
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) {
+        return reject(result);
       }
-      const middleware = middlewares[index];
-      middleware(req, res, (result: any) => {
-        if (result instanceof Error) {
-          return reject(result);
-        }
-        return run(index + 1);
-      });
-    };
-    run(0);
+      return resolve(result);
+    });
   });
 };
+

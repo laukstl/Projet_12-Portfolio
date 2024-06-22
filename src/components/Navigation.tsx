@@ -45,7 +45,7 @@ function Navigation() {
                         border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl
                         dark:border-black dark:from-zinc-800 dark:bg-gray-800
                         md:p-4
-                        lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4
+                        lg:pl-7 lg:py-6 lg:ml-20 lg:left-auto lg:top-auto lg:w-auto lg:rounded-xl lg:border lg:p-4
                         dark:rounded-none"
             style={{ backdropFilter: 'blur(10px) brightness(0.8)', backgroundColor: 'rgba(0, 0, 0, 0.1)' }}
         >   
@@ -55,7 +55,7 @@ function Navigation() {
 
             {/* container à bouttons */}
             {/* <div className="sm:mx-4 sm:block sm:flex-nowrap grid grid-col-2 space-x-2 sm:flex"> */}
-            <div className="sm:mx-4 sm:block sm:flex-nowrap space-x-2 block ">
+            <div className="sm:mx-4 sm:block sm:flex-nowrap space-x-2 block">
                 {/* bouttons */}
                 {navigation.map((item) => (
                     <Link
