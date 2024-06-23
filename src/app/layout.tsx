@@ -38,13 +38,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const jsonLd: WithContext<LocalBusiness> = {
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
+        address: {
+            "@type": "PostalAddress",
+            "addressLocality": "Bordeaux",
+            "postalCode": "33001",
+            "streetAddress": "10, rue du bout de la ville"
+          },
         name: "Laurent C. Intégrateur Web",
         description: descriptionText,
         email: 'laurent@kstl.fr',
         founder: 'Laurent C.',
         foundingDate: '2024',
         foundingLocation: 'Paris, France',
-        logo : './logo.png',
+        logo : './logo.webp',
+        telephone: "(+33) 0123-4567",
+        url: "https://www.kstl.fr"
     }
 
     return (

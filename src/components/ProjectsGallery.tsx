@@ -45,7 +45,9 @@ function ProjectsGallery() {
                                         width={1280}
                                         height={890}
                                     />
-                                    <div className='z-40 bg-blur bg-black/50 absolute inset-x-0 bottom-0 h-10 backdrop-blur-md rounded-b-lg dark:rounded-none border border-gray-500 flex justify-between items-center text-nowrap sm:h-16 sm:p-1'>
+                                    {/* Bandeau */}
+                                    <div className='z-40 bg-blur bg-black/60 absolute inset-x-0 bottom-0 h-10 rounded-b-lg dark:rounded-none border border-gray-500 flex justify-between items-center text-nowrap sm:h-16 sm:p-1'
+                                    >
                                         {/* titre projet et date */}
                                         <div className='ml-2 sm:text-center flex items-center'>
                                             <div className='font-bold text-white text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-2xl'>{item.pname ? item.pname : "Titre"}</div>
