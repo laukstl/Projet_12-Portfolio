@@ -1,15 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+
 import ProjectModal from './ProjectModal';
 import { logo_listing } from './Competences';
 import { projects } from './projectsData';
 import type { Project } from './projectsData';
-import Link from 'next/link';
-import { GithubIcon } from './icons';
+import Tooltip from './Tooltip';
+
 import { AnimatePresence, motion } from 'framer-motion';
 
+import { GithubIcon } from './icons';
 import { ListBulletIcon, TableCellsIcon } from '@heroicons/react/24/outline';
 
 function ProjectsGallery() {
@@ -65,11 +68,8 @@ function ProjectsGallery() {
                                                             width={35}
                                                             height={35}
                                                         />
-                                                        {/* Tooltip */}
-                                                        <span className="group-hover:opacity-90 bg-blur transition-opacity bg-gray-800 py-1 px-2 text-sm text-gray-100 rounded-md absolute left-1/2 
-                                                        drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]
-                                                        dark:bg-gray-50 dark:text-gray-900 dark:border dark:border-gray-900
-                                                        -translate-x-1/2 -translate-y-14 opacity-0 m-4 mx-auto z-50">{logo.alt}</span>
+                                                        <Tooltip alt={logo.alt} tx={'-translate-x-1/2'} ty={'-translate-y-14'} />
+                                                        {/* <Tooltip alt={logo.alt} tx={1/2} ty={14} /> */}
                                                     </div>
 
                                             ))}
@@ -117,14 +117,9 @@ function ProjectsGallery() {
                                                 <p className="text-gray-700">Projet {item.prjt_numb}: {item.date}</p>
                                             </div>
                                             {/* competences */}
-                                            <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                                Tooltip content
-                                                <div className="tooltip-arrow" data-popper-arrow></div>
-                                            </div>
-                                            <div className='hidden sm:flex justify-center items-center gap-2'
-                                                data-tooltip-target="tooltip-default">
+                                            <div className='hidden sm:flex justify-center items-center gap-2'>
                                                 {filteredLogos.map((logo) => (
-                                                    <div key={`list-${item.name}-${logo.alt}`}>
+                                                    <div key={`list-${item.name}-${logo.alt}`} className='group relative'>
                                                         <Image
                                                             alt={'Technologie de ' + logo.alt}
                                                             className="w-8 object-cover filter grayscale hover:filter-none transition-filter duration-300 sm:w-10 drop-shadow-[0_1.1px_1.1px_rgba(5,5,5,0.6)]"
@@ -132,6 +127,7 @@ function ProjectsGallery() {
                                                             width={35}
                                                             height={35}
                                                         />
+                                                        <Tooltip alt={logo.alt} tx={'-translate-x-1/2'} ty={'-translate-y-24'} />
                                                     </div>
                                                 ))}
                                             </div>

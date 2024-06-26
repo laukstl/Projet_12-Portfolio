@@ -8,12 +8,12 @@ import { LocalBusiness, WithContext } from "schema-dts";
 
 const descriptionText = "Découvrez le portfolio de Laurent C., développeur web spécialisé en React, NextJS et Tailwind. Explorez mes projets récents et contactez-moi!";
 const titleText = "Portfolio de Laurent C.";
-const urlBase = './';
+const urlBase = '/';
 
 export const metadata: Metadata = {
     title: titleText,
     description: descriptionText,
-    metadataBase: new URL('https://kstl.fr'),
+    metadataBase: new URL('https://p12.kstl.fr'),
 
     alternates: {
         canonical: urlBase,
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         foundingLocation: 'Paris, France',
         logo : './logo.webp',
         telephone: "(+33) 0123-4567",
-        url: "https://www.kstl.fr"
+        url: "https://p12.kstl.fr"
     }
 
     return (
