@@ -2,7 +2,7 @@
 
 Bienvenue sur le projet de portfolio d'un étudiant de la formation OpenClassrooms. Ce projet a été réalisé dans le cadre de la formation "Développeur/Intégrateur Web" et a pour objectif de créer et publier en ligne un portfolio professionnel.
 
-## Qu'allez-vous apprendre dans ce projet ?
+## Qu'ai-je appris dans ce projet ?
 
 ### Objectifs Pédagogiques
 - **Déployer un site statique en ligne** : Utiliser GitHub Pages pour rendre votre portfolio accessible au public.
@@ -16,10 +16,6 @@ Bienvenue sur le projet de portfolio d'un étudiant de la formation OpenClassroo
 - Optimisation du code et référencement SEO.
 
 ## Présentation du Projet
-
-### Pourquoi ce projet est-il important pour votre carrière ?
-
-La création d'un portfolio en ligne est essentielle pour tout développeur cherchant à se faire remarquer et à décrocher des opportunités professionnelles. Les compétences acquises dans ce projet, telles que le déploiement en ligne et l'optimisation SEO, sont fondamentales dans le domaine du développement web. De plus, un site responsive et professionnel démontre votre souci du détail et votre compréhension des bonnes pratiques de design web.
 
 ### Scénario
 
@@ -46,3 +42,6 @@ Pour être validé, votre site portfolio devra :
 ---
 
 Ce projet a été réalisé dans le cadre de la formation "Développeur Web" d'OpenClassrooms.
+
+FontEnd ? Check.
+Fullstack ?? Let's gooo !!!
