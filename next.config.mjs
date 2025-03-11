@@ -11,7 +11,7 @@ const nextConfig = {
   poweredByHeader: false,
   
   // répertoire de sortie
-  distDir: './dist',
+  // distDir: './dist',
 
   // sécurisation des en-têtes
   async headers() {
