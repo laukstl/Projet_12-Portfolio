@@ -2,10 +2,6 @@
 
 import { useState, useRef } from 'react';
 
-import UseAnimations from 'react-useanimations';
-// EVERY ANIMATION NEEDS TO BE IMPORTED FIRST -> YOUR BUNDLE WILL INCLUDE ONLY WHAT IT NEEDS
-import loading from 'react-useanimations/lib/loading';
-
 interface FormErrors {
     nameadza?: string;
     emaildzas?: string;
@@ -149,7 +145,7 @@ export default function Contact() {
                     disabled={isLoading}
                     className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded dark:rounded-none flex gap-3 justify-center"
                 >
-                    Envoyer un message {isLoading && <UseAnimations animation={loading} strokeColor={'#FFF'} />}
+                    Envoyer un message {isLoading && <div className="w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin" />}
                 </button>
             </form>
             {formStatus && <div className="mt-4 text-red-500 dark:drop-shadow-[0_1.1px_1.1px_rgba(255,255,255,0.3)]">{formStatus}</div>}
